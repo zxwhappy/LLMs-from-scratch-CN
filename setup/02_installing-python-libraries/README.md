@@ -1,66 +1,59 @@
-# Installing Python Packages and Libraries Used In This Book
+# 安装本书所需的 Python 包和库
 
-This document provides more information on double-checking your installed Python version and packages. (Please see the [../01_optional-python-setup-preferences](../01_optional-python-setup-preferences) folder for more information on installing Python and Python packages.)
+本文档提供了关于如何检查 Python 版本和已安装包的详细信息。（如需了解如何安装 Python 和 Python 包，请参阅 [../01_optional-python-setup-preferences](../01_optional-python-setup-preferences) 目录。）
 
-I used the following libraries listed [here](https://github.com/rasbt/LLMs-from-scratch/blob/main/requirements.txt) for this book. Newer versions of these libraries are likely compatible as well. However, if you experience any problems with the code, you can try these library versions as a fallback.
+本书使用了[此处](https://github.com/rasbt/LLMs-from-scratch/blob/main/requirements.txt)列出的库。这些库的较新版本通常也是兼容的，但如果您在运行代码时遇到问题，可以尝试使用这些指定版本作为备用方案。
 
-To install these requirements most conveniently, you can use the `requirements.txt` file in the root directory for this code repository and execute the following command:
+为了更方便地安装这些依赖项，您可以使用代码库根目录中的 `requirements.txt` 文件，并运行以下命令：
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Alternatively, you can install it via the GitHub URL as follows:
+或者，您也可以通过 GitHub URL 安装，命令如下：
 
 ```bash
 pip install -r https://raw.githubusercontent.com/rasbt/LLMs-from-scratch/main/requirements.txt
 ```
 
-
-Then, after completing the installation, please check if all the packages are installed and are up to date using
+安装完成后，请使用以下命令检查所有包是否已安装并更新至最新版本：
 
 ```bash
 python python_environment_check.py
 ```
+![检查安装结果](https://sebastianraschka.com/images/LLMs-from-scratch-images/setup/02_installing-python-libraries/check_1.jpg)
 
-<img src="https://sebastianraschka.com/images/LLMs-from-scratch-images/setup/02_installing-python-libraries/check_1.jpg" width="600px">
+建议在 JupyterLab 中运行本目录下的 `python_environment_check.ipynb` 文件来检查版本，结果应与上图一致。
 
-It's also recommended to check the versions in JupyterLab by running the `python_environment_check.ipynb` in this directory, which should ideally give you the same results as above.
+![JupyterLab 检查结果](https://sebastianraschka.com/images/LLMs-from-scratch-images/setup/02_installing-python-libraries/check_2.jpg)
 
-<img src="https://sebastianraschka.com/images/LLMs-from-scratch-images/setup/02_installing-python-libraries/check_2.jpg" width="500px">
+如果您看到以下问题，可能是您的 JupyterLab 实例连接到了错误的 conda 环境：
 
-If you see the following issues, it's likely that your JupyterLab instance is connected to wrong conda environment:
+![JupyterLab 环境问题](https://sebastianraschka.com/images/LLMs-from-scratch-images/setup/02_installing-python-libraries/jupyter-issues.jpg)
 
-<img src="https://sebastianraschka.com/images/LLMs-from-scratch-images/setup/02_installing-python-libraries/jupyter-issues.jpg" width="450px">
+此时，您可以使用 `watermark` 工具，并通过 `--conda` 标志检查是否在正确的 conda 环境中打开了 JupyterLab 实例：
 
-In this case, you may want to use `watermark` to check if you opened the JupyterLab instance in the right conda environment using the `--conda` flag:
-
-<img src="https://sebastianraschka.com/images/LLMs-from-scratch-images/setup/02_installing-python-libraries/watermark.jpg" width="350px">
-
+![使用 watermark 检查环境](https://sebastianraschka.com/images/LLMs-from-scratch-images/setup/02_installing-python-libraries/watermark.jpg)
 
 <br>
 <br>
 
+## 安装 PyTorch
 
-## Installing PyTorch
-
-PyTorch can be installed just like any other Python library or package using pip. For example:
+PyTorch 可以像其他 Python 库一样使用 pip 安装。例如：
 
 ```bash
 pip install torch
 ```
 
-However, since PyTorch is a comprehensive library featuring CPU- and GPU-compatible codes, the installation may require additional settings and explanation (see the *A.1.3 Installing PyTorch in the book for more information*).
+由于 PyTorch 是一个功能全面的库，支持 CPU 和 GPU 兼容的代码，安装时可能需要额外的设置和说明（更多信息请参阅本书的 *A.1.3 安装 PyTorch* 部分）。
 
-It's also highly recommended to consult the installation guide menu on the official PyTorch website at [https://pytorch.org](https://pytorch.org).
+强烈建议参考 PyTorch 官方网站 [https://pytorch.org](https://pytorch.org) 上的安装指南。
 
-<img src="https://sebastianraschka.com/images/LLMs-from-scratch-images/setup/02_installing-python-libraries/pytorch-installer.jpg" width="600px">
+![PyTorch 安装界面](https://sebastianraschka.com/images/LLMs-from-scratch-images/setup/02_installing-python-libraries/pytorch-installer.jpg)
 
 <br>
 
 ---
 
-
-
-
-Any questions? Please feel free to reach out in the [Discussion Forum](https://github.com/rasbt/LLMs-from-scratch/discussions).
+如有任何问题，欢迎在 [讨论区](https://github.com/rasbt/LLMs-from-scratch/discussions) 中提问。
