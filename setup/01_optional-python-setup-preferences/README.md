@@ -25,7 +25,7 @@ sh ~/Desktop/Miniforge3-MacOSX-arm64.sh
 
 <img src="https://sebastianraschka.com/images/LLMs-from-scratch-images/setup/01_optional-python-setup-preferences/miniforge-install.png" alt="miniforge-install" width="600px">
 
-接下来，按照下载说明逐步操作，按 "Enter" 确认。
+接下来，按照下载说明逐步操作，按 "Enter" 键确认。
 
 
 <br>
