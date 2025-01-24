@@ -108,7 +108,7 @@
 要下载此仓库的副本，请点击[下载ZIP](https://github.com/rasbt/LLMs-from-scratch/archive/refs/heads/main.zip)按钮，或者在终端中执行以下命令：
 
 ```bash
-git clone --depth 1 https://github.com/GoatCsu/LLMs-from-scratch-CN-CSU.git
+git clone --depth 1 https://github.com/rasbt/LLMs-from-scratch.git
 ```
 
 要下载此仓库汉化版本，请点击[下载ZIP](https://github.com/MLNLP-World/LLMs-from-scratch-CN.git)按钮，或者在终端中执行以下命令：
