@@ -1,39 +1,38 @@
-# Building a User Interface to Interact With the Instruction Finetuned GPT Model
+# 构建用户界面以交互指令微调的 GPT 模型
 
+本 **附加文件夹（bonus folder）** 包含 **运行 ChatGPT 风格用户界面** 的代码，以便与 **第 7 章** 训练的 **指令微调 GPT** 进行交互，如下所示：
 
+![Chainlit UI 示例](https://sebastianraschka.com/images/LLMs-from-scratch-images/bonus/chainlit/chainlit-sft.webp?2)
 
-This bonus folder contains code for running a ChatGPT-like user interface to interact with the instruction finetuned GPT from chapter 7, as shown below.
-
-
-
-![Chainlit UI example](https://sebastianraschka.com/images/LLMs-from-scratch-images/bonus/chainlit/chainlit-sft.webp?2)
-
-
-
-To implement this user interface, we use the open-source [Chainlit Python package](https://github.com/Chainlit/chainlit).
+为了实现该用户界面，我们使用了 **开源 Python 库** [Chainlit](https://github.com/Chainlit/chainlit)。
 
 &nbsp;
-## Step 1: Install dependencies
 
-First, we install the `chainlit` package via
+## 步骤 1：安装依赖项
+
+首先，我们通过以下命令安装 `chainlit` 库：
+
 
 ```bash
 pip install chainlit
 ```
 
-(Alternatively, execute `pip install -r requirements-extra.txt`.)
+（或者，执行 `pip install -r requirements-extra.txt`。）
 
 &nbsp;
-## Step 2: Run `app` code
 
-The [`app.py`](app.py) file contains the UI code based. Open and inspect these files to learn more.
+## 步骤 2：运行 `app` 代码
 
-This file loads and uses the GPT-2 weights we generated in chapter 7. This requires that you execute the [`../01_main-chapter-code/ch07.ipynb`](../01_main-chapter-code/ch07.ipynb) file first.
+[`app.py`](app.py) 文件包含 **基于 UI 的代码**，您可以打开并检查这些文件，以了解其具体实现。  
 
-Excecute the following command from the terminal to start the UI server:
+该文件 **加载并使用** 我们在 **第 7 章** 生成的 **GPT-2 权重**，因此需要 **先执行** [`../01_main-chapter-code/ch07.ipynb`](../01_main-chapter-code/ch07.ipynb)。  
+
+在终端中执行以下命令，以启动 **UI 服务器**：
+
 
 ```bash
 chainlit run app.py
 ```
 
-Running commands above should open a new browser tab where you can interact with the model. If the browser tab does not open automatically, inspect the terminal command and copy the local address into your browser address bar (usually, the address is `http://localhost:8000`).
+- 运行上述命令后，应会 **自动打开一个新的浏览器标签页**，您可以在其中与模型进行交互。  
+- 如果浏览器未自动打开，请检查 **终端输出**，然后 **手动复制本地地址** 到浏览器地址栏（通常是 `http://localhost:8000`）。  
