@@ -5,6 +5,16 @@
 根据 **Project Gutenberg** 网站的说明，“绝大多数 Project Gutenberg 电子书在美国属于公有领域。”  
 
 在使用 Project Gutenberg 提供的资源之前，请阅读 [Project Gutenberg 许可、权限和常见问题](https://www.gutenberg.org/policy/permission.html) 了解详细信息。
+## 使用指南
+
+### 1) 下载数据集 
+在本节中，我们使用来自 [`pgcorpus/gutenberg`](https://github.com/pgcorpus/gutenberg) GitHub 存储库的代码从Project Gutenberg下载书籍。
+
+截至撰写本文时，这将需要大约 50 GB 的磁盘空间，大约需要 10-15 个小时，但具体时间可能更长，具体取决于Project Gutenberg当前的大小。
+
+#### Linux 和 macOS 用户的下载说明
+Linux 和 macOS 用户可以按照以下步骤下载数据集（如果您是 Windows 用户，请参阅下面的注释）：
+1. 将 `03_bonus_pretraining_on_gutenberg` 文件夹设置为工作目录，以在此文件夹中本地克隆 `gutenberg` 存储库（这是运行提供的脚本 `prepare_dataset.py` 和 `pretraining_simple.py` 所必需的）。例如，当位于 `LLMs-from-scratch` 存储库的文件夹中时，通过以下方式导航到 *03_bonus_pretraining_on_gutenberg* 文件夹：
 ```bash
 cd ch05/03_bonus_pretraining_on_gutenberg
 ```
