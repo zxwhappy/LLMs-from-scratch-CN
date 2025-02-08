@@ -35,40 +35,44 @@ mv setup/03_optional-docker-environment/.devcontainer ./
 
 3. 在 Docker Desktop 中，确保 **_desktop-linux_ builder** 正在运行并将用于构建 Docker 容器（路径：_Docker Desktop_ -> _Change settings_ -> _Builders_ -> _desktop-linux_ -> _..._ -> _Use_）。
 
-4. 如果你拥有 [支持 CUDA 的 GPU](https://developer.nvidia.com/cuda-gpus)，可以加速训练和推理过程：
+4. 
+   1. 安装 NVIDIA Container Toolkit
 
-   4.1 按照 [此处](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installing-with-apt) 的说明安装 **NVIDIA Container Toolkit**。NVIDIA Container Toolkit 的支持情况可参考 [此处](https://docs.nvidia.com/cuda/wsl-user-guide/index.html#nvidia-compute-software-support-on-wsl-2)。
+    按照 [此处](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installing-with-apt) 的说明安装 **NVIDIA Container Toolkit**。根据 [此处](https://docs.nvidia.com/cuda/wsl-user-guide/index.html#nvidia-compute-software-support-on-wsl-2) 的说明，NVIDIA Container Toolkit 在 WSL 2 上受支持。
 
-   4.2 在 Docker Engine 守护进程配置中添加 _nvidia_ 作为运行时（路径：_Docker Desktop_ -> _Change settings_ -> _Docker Engine_）。在配置文件中添加以下内容：
+    2. 在 Docker Engine 配置中添加 NVIDIA 运行时
 
-   ```json
-   "runtimes": {
-       "nvidia": {
-       "path": "nvidia-container-runtime",
-       "runtimeArgs": []
-   ```
+        在 Docker Engine 守护程序（daemon）配置中添加 `_nvidia_` 作为运行时（路径：_Docker Desktop_ -> _更改设置_ -> _Docker Engine_）。在配置文件中添加以下内容：
 
-   例如，完整的 Docker Engine 守护进程配置 JSON 代码应如下所示：
+    ```json
+    "runtimes": {
+        "nvidia": {
+        "path": "nvidia-container-runtime",
+        "runtimeArgs": []
+    ```
 
-   ```json
-   {
-     "builder": {
-       "gc": {
-         "defaultKeepStorage": "20GB",
-         "enabled": true
-       }
-     },
-     "experimental": false,
-     "runtimes": {
-       "nvidia": {
-         "path": "nvidia-container-runtime",
-         "runtimeArgs": []
-       }
-     }
-   }
-   ```
+    例如，完整的 Docker Engine 守护程序配置 JSON 代码应如下所示：
 
-   并重启 Docker Desktop。
+    ```json
+    {
+      "builder": {
+        "gc": {
+          "defaultKeepStorage": "20GB",
+          "enabled": true
+        }
+      },
+      "experimental": false,
+      "runtimes": {
+        "nvidia": {
+          "path": "nvidia-container-runtime",
+          "runtimeArgs": []
+        }
+      }
+    }
+    ```
+
+    然后重启 Docker Desktop。
+
 
 5. 在终端中输入 `code .` 以在 VS Code 中打开项目。或者，你也可以启动 VS Code，并从界面中选择项目打开。
 
